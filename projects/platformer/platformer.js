@@ -49,6 +49,7 @@ createPlatform(250,500,100,10);
 createPlatform(500,400,100,10);
 createPlatform(600,260,100,10);
 createPlatform(1100,400,40,10);
+createPlatform(1300,300,40,10);
  
     // TODO 2
     // Create collectables
@@ -60,6 +61,7 @@ createCollectable('database',35,650,0,0);
 createCollectable('database',280,450,0,0);
 createCollectable('database',600,300,0,0);
 createCollectable('database',1100,350,0,0);
+createCollectable('database',1300,250,0,0);
 
 
     // TODO 3
