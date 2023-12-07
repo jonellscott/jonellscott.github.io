@@ -57,11 +57,11 @@ createPlatform(1300,300,40,10);
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
-createCollectable('cash',35,650,0,0);
-createCollectable('cash',280,450,0,0);
-createCollectable('cash',600,300,0,0);
-createCollectable('cash',1100,350,0,0);
-createCollectable('cash',1300,250,0,0);
+createCollectable('money',35,650,0,0);
+createCollectable('money',280,450,0,0);
+createCollectable('money',600,300,0,0);
+createCollectable('money',1100,350,0,0);
+createCollectable('money',1300,250,0,0);
 
 
     // TODO 3
