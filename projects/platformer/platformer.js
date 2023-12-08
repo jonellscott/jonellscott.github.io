@@ -72,6 +72,7 @@ createCollectable('money',1300,250,0,0);
 
 createCannon('left',550,1000,100,50);
 createCannon('left',300,1500,100,50);
+createCannon('left',50,1500,150,50);
 
 
     /////////////////////////////////////////////////
