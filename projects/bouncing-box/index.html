@@ -5,6 +5,14 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+		body {
+ 			background-image: url("img/thosand\ yard\ stare.jpg");
+ 			background-color: #cccccc;
+			-webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+		}
 		.box {
 			width: 70px;
 			height: 70px;
@@ -68,7 +76,7 @@
 			var speed = 10;
 			var positionY;
 			var speedY;
-			
+			var boardHeight = jQuery(window).height(); 
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
