@@ -22,6 +22,7 @@ var init = function (window) {
         // TODO 1 : Declare and initialize our variables
         var circle;
         var circles = [];
+        var rightEdge = circle.x + circle.radius;
 
         // TODO 2 : Create a function that draws a circle 
         function drawCircle () {
@@ -81,7 +82,10 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+            if (rightEdge < canvas.width - 50) {
+                physikz.updatePosition(circles[i]); 
+                
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
