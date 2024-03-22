@@ -18,12 +18,83 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-    var hitZoneSize = 25; // where it hits
-    var damageFromObstacle = 10; //how much damage it takes
-    var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //crtaes an obstacle and creates the hitzone
-    sawBladeHitZone.x = 400; // where the obstacle is 
-    sawBladeHitZone.y = groundY - 110; //how high the obstacle is from thee ground
-    game.addGameItem(sawBladeHitZone);
+    
+    function createSawBlade (x, y) {
+      var hitZoneSize = 25; // where it hits
+      var damageFromObstacle = 10; //how much damage it takes
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //crtaes an obstacle and creates the hitzone
+      sawBladeHitZone.x = x; // where the obstacle is 
+      sawBladeHitZone.y = y; //how high the obstacle is from thee ground
+      game.addGameItem(sawBladeHitZone);
+      var obstacleImage = draw.bitmap("img/sawblade.png");
+      sawBladeHitZone.addChild(obstacleImage); //assigns enemy to child
+      obstacleImage.x = -25; // where the obstacle is left to right
+      obstacleImage.y = -25; // where the obstacle is up and down 
+    
+    
+
+    }
+
+    createSawBlade(400, groundY - 120, 10); //calls createSawBlade function
+    createSawBlade(700, groundY - 120, 20);
+    createSawBlade(900, groundY - 120, 30);
+
+   
+  function createEnemy(x, y) {
+    var enemy = game.createGameItem("enemy", 25);
+    var redSquare = draw.rect(50, 50, "red");
+    redSquare.x = -25; // where the enemy is left to right
+    redSquare.y = -25; // where the enemy is up and down 
+    enemy.addChild(redSquare); //assigns enemy to child
+    enemy.x = x;
+    enemy.y = y;
+    game.addGameItem(enemy);
+    enemy.velocityX = -3;
+    enemy.rotationalVelocity = 0;
+
+    enemy.onPlayerCollision = function () {
+      game.changeIntegrity(-10);
+    };
+
+    enemy.onProjectileCollision = function () {
+      game.increaseScore(100);
+      enemy.fadeOut();
+      //enemy.shrink();
+      //enemy.fadeOut(0,0);
+    };
+  }
+
+  createEnemy(600, groundY - 50, ); //calls createEnemy function
+  createEnemy(900, groundY - 50, ); //calls createEnemy function
+
+  function createReward(x, y) {
+    var reward = game.createGameItem("enemy", 25);
+    var blueSquare = draw.rect(50, 50, "red");
+    blueSquare.x = -25; // where the reward is left to right
+    blueSquare.y = -25; // where the reward is up and down 
+    reward.addChild(BeforeUnloadEventSquare); //assigns reward to child
+    reward.x = x;
+    reward.y = y;
+    game.addGameItem(reward);
+    reward.velocityX = -3
+    reward.rotationalVelocity = 0;
+
+    reward.onPlayerCollision = function () {
+      game.changeIntegrity(10);
+      game.increaseScore(50);
+    };
+
+    reward.onProjectileCollision = function () {
+      //game.increaseScore(100);
+      //enemy.fadeOut();
+      //enemy.shrink();
+      //enemy.fadeOut(0,0);
+    };
+  }
+
+  createReward(1000, groundY - 100, ); //calls createReward function
+
+
 
     function startLevel() {
       // TODO 13 goes below here
