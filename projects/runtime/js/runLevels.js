@@ -42,7 +42,7 @@ var runLevels = function (window) {
    
   function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.rect(50, 50, "red");
+    var redSquare = draw.bitmap("img/grenade.img");
     redSquare.x = -25; // where the enemy is left to right
     redSquare.y = -25; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
@@ -51,6 +51,8 @@ var runLevels = function (window) {
     game.addGameItem(enemy);
     enemy.velocityX = -3;
     enemy.rotationalVelocity = 0;
+    redSquareX = 0.25;
+    redSquareY = 0.25;
 
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-10);
