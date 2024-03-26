@@ -79,12 +79,40 @@ var runLevels = function (window) {
     reward.y = y;
     game.addGameItem(reward);
     reward.velocityX = -3
-    reward.rotationalVelocity = 0;
+    
 
     reward.onPlayerCollision = function () {
       game.changeIntegrity(10);
       game.increaseScore(50);
-    };
+    }; 
+
+    function createMarker(x, y) {
+      var marker = game.createGameItem("marker", 25);
+      var greenSquare = draw.rect(50,50,"green");
+      greenSquare.x = -75; // where the enemy is left to right
+      greenSquare.y = -150; // where the enemy is up and down 
+      marker.addChild(greenSquare); //assigns enemy to child
+      maker.x = x;
+      marker.y = y;
+      game.addGameItem(marker);
+      marker.velocityX = -1;
+      greenSquareX = 1;
+      greenSquareY = 1;
+  
+      marker.onPlayerCollision = function () {
+        game.changeIntegrity(25);
+        startLevel();
+      };
+
+      createMarker(1500, groundY - 10, ); //calls createEnemy function
+      
+      marker.onProjectileCollision = function () {
+        game.increaseScore(100);
+        enemy.fadeOut();
+        //enemy.shrink();
+        //enemy.fadeOut(0,0);
+      };
+    }
 
     reward.onProjectileCollision = function () {
       //game.increaseScore(100);
@@ -100,8 +128,23 @@ var runLevels = function (window) {
 
     function startLevel() {
       // TODO 13 goes below here
-
-
+      var level = levelData[currentLevel];
+      var levelObjects = level.gameItems;
+      for (var i = 0; levelObjects.length; i++) {
+        var element = levelObjects[i];
+        if (element.type === "sawblade") {
+          createSawBlade(element.x, element.y)
+        }
+        if (element.type === "enemy") {
+          createEnemy(element.x, element.y)
+        }
+        if (element.type === "reward") {
+          createReward(element.x, element.y)
+        }
+        if (element.type === "marker") {
+          createMarker(element.x, element.y)
+        }
+      }
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
