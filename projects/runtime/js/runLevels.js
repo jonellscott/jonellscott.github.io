@@ -26,7 +26,7 @@ var runLevels = function (window) {
       sawBladeHitZone.x = x; // where the obstacle is 
       sawBladeHitZone.y = y; //how high the obstacle is from thee ground
       game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/sawblade.png");
+      var obstacleImage = draw.bitmap("img/spiketrap.img");
       sawBladeHitZone.addChild(obstacleImage); //assigns enemy to child
       obstacleImage.x = -25; // where the obstacle is left to right
       obstacleImage.y = -25; // where the obstacle is up and down 
@@ -41,7 +41,7 @@ var runLevels = function (window) {
    
   function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/poisiontrap.img");
+    var redSquare = draw.bitmap("img/midas.img");
     redSquare.x = -25; // where the enemy is left to right
     redSquare.y = -25; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
@@ -69,26 +69,26 @@ var runLevels = function (window) {
   createEnemy(900, groundY - 50, ); //calls createEnemy function
 
   function createEnemy2(x, y) {
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/spiketrap.img");
+    var enemy2 = game.createGameItem("enemy2", 25);
+    var redSquare = draw.bitmap("img/poisiontrap.img");
     redSquare.x = -25; // where the enemy is left to right
     redSquare.y = -25; // where the enemy is up and down 
-    enemy.addChild(redSquare); //assigns enemy to child
-    enemy.x = x;
-    enemy.y = y;
+    enemy2.addChild(redSquare); //assigns enemy to child
+    enemy2.x = x;
+    enemy2.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -3;
-    enemy.rotationalVelocity = 0;
+    enemy2.velocityX = -3;
+    enemy2.rotationalVelocity = 0;
     redSquare.scaleX = 0.25;
     redSquare.scaleY = 0.25;
 
-    enemy.onPlayerCollision = function () {
+    enemy2.onPlayerCollision = function () {
       game.changeIntegrity(-10);
     };
 
-    enemy.onProjectileCollision = function () {
+    enemy2.onProjectileCollision = function () {
       game.increaseScore(100);
-      enemy.fadeOut();
+      enemy2.fadeOut();
       //enemy.shrink();
       //enemy.fadeOut(0,0);
     };
@@ -100,7 +100,7 @@ var runLevels = function (window) {
 
   function createReward(x, y) {
     var reward = game.createGameItem("enemy", 25);
-    var blueSquare = draw.rect(50, 50, "red");
+    var blueSquare = draw.rect("img/vbucks.img");
     blueSquare.x = -25; // where the reward is left to right
     blueSquare.y = -25; // where the reward is up and down 
     reward.addChild(blueSquare); //assigns reward to child
