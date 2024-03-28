@@ -26,13 +26,13 @@ var runLevels = function (window) {
       sawBladeHitZone.x = x; // where the obstacle is 
       sawBladeHitZone.y = y; //how high the obstacle is from thee ground
       game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/spiketrap.img");
+      var obstacleImage = draw.bitmap("img/spiketrap.png");
       sawBladeHitZone.addChild(obstacleImage); //assigns enemy to child
-      obstacleImage.x = -25; // where the obstacle is left to right
-      obstacleImage.y = -25; // where the obstacle is up and down 
-    
-    
-
+      obstacleImage.x = -60; // where the obstacle is left to right
+      obstacleImage.y = -50; // where the obstacle is up and down 
+      obstacleImage.scaleX = 0.30 //how big the object is from its x value
+      obstacleImage.scaleY = 0.30; //how big the object is from its y value
+ 
     }
 
     
@@ -42,16 +42,16 @@ var runLevels = function (window) {
   function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
     var redSquare = draw.bitmap("img/midas.img");
-    redSquare.x = -25; // where the enemy is left to right
-    redSquare.y = -25; // where the enemy is up and down 
+    redSquare.x = -80; // where the enemy is left to right
+    redSquare.y = -249; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
     enemy.velocityX = -3;
     enemy.rotationalVelocity = 0;
-    redSquare.scaleX = 0.25;
-    redSquare.scaleY = 0.25;
+    redSquare.scaleX = 0.10;
+    redSquare.scaleY = 0.10;
 
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-10);
@@ -100,7 +100,7 @@ var runLevels = function (window) {
 
   function createReward(x, y) {
     var reward = game.createGameItem("enemy", 25);
-    var blueSquare = draw.rect("img/vbucks.img");
+    var blueSquare = draw.rect("img/vbucks.jpg");
     blueSquare.x = -25; // where the reward is left to right
     blueSquare.y = -25; // where the reward is up and down 
     reward.addChild(blueSquare); //assigns reward to child
