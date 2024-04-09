@@ -69,7 +69,7 @@ var runLevels = function (window) {
 
   function createEnemy2(x, y) {
     var enemy2 = game.createGameItem("enemy2", 25);
-    var redSquare = draw.bitmap("img/poisiontrap.img");
+    var redSquare = draw.bitmap("img/poisiontrap.png");
     redSquare.x = -25; // where the enemy is left to right
     redSquare.y = -25; // where the enemy is up and down 
     enemy2.addChild(redSquare); //assigns enemy to child
@@ -172,6 +172,9 @@ var runLevels = function (window) {
         }
         if (element.type === "marker") {
           createMarker(element.x, element.y)
+        }
+        if (element.type === "enemy2") {
+          createEnemy2(element.x, element.y)
         }
       }
 
