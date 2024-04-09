@@ -41,7 +41,7 @@ var runLevels = function (window) {
    
   function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/midas.img");
+    var redSquare = draw.bitmap("img/midas.png");
     redSquare.x = -80; // where the enemy is left to right
     redSquare.y = -249; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
@@ -65,8 +65,7 @@ var runLevels = function (window) {
     };
   }
 
-  createEnemy(600, groundY - 50, ); //calls createEnemy function
-  createEnemy(900, groundY - 50, ); //calls createEnemy function
+  
 
   function createEnemy2(x, y) {
     var enemy2 = game.createGameItem("enemy2", 25);
@@ -94,25 +93,28 @@ var runLevels = function (window) {
     };
   }
 
-  
 
   
 
   function createReward(x, y) {
     var reward = game.createGameItem("enemy", 25);
-    var blueSquare = draw.rect("img/vbucks.jpg");
-    blueSquare.x = -25; // where the reward is left to right
-    blueSquare.y = -25; // where the reward is up and down 
+    var blueSquare = draw.bitmap("img/vbucks.png");
+    blueSquare.x = -40; // where the reward is left to right
+    blueSquare.y = -55; // where the reward is up and down 
     reward.addChild(blueSquare); //assigns reward to child
     reward.x = x;
     reward.y = y;
     game.addGameItem(reward);
     reward.velocityX = -3
+    blueSquare.scaleX = 0.30;
+    blueSquare.scaleY = 0.30;
+    
+    
     
 
     reward.onPlayerCollision = function () {
       game.changeIntegrity(10);
-      game.increaseScore(50);
+      game.increaseScore(100);
     }; 
 
     reward.onProjectileCollision = function () {
@@ -126,16 +128,16 @@ var runLevels = function (window) {
   
     function createMarker(x, y) {
       var marker = game.createGameItem("marker", 25);
-      var greenSquare = draw.rect(50,50,"green");
-      greenSquare.x = -75; // where the marker is left to right
-      greenSquare.y = -150; // where the marker is up and down 
+      var greenSquare = draw.bitmap("img/fortnitevictory.png");
+      greenSquare.x = -150; // where the marker is left to right
+      greenSquare.y = -75; // where the marker is up and down 
       marker.addChild(greenSquare); //assigns marker to child
       marker.x = x;
       marker.y = y;
       game.addGameItem(marker);
-      marker.velocityX = -1;
-      greenSquare.scaleX = 1;
-      greenSquare.scaleY = 1;
+      marker.velocityX = -3
+      greenSquare.scaleX = 0.25;
+      greenSquare.scaleY = 0.25;
   
       marker.onPlayerCollision = function () {
         game.changeIntegrity(25);
@@ -151,9 +153,6 @@ var runLevels = function (window) {
     }
 
     
-
-  createReward(1000, groundY - 100, ); //calls createReward function
-
 
 
     function startLevel() {
