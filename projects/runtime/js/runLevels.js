@@ -42,16 +42,16 @@ var runLevels = function (window) {
   function createEnemy(x, y) {
     var enemy = game.createGameItem("enemy", 25);
     var redSquare = draw.bitmap("img/midas.png");
-    redSquare.x = -80; // where the enemy is left to right
-    redSquare.y = -249; // where the enemy is up and down 
+    redSquare.x = -180; // where the enemy is left to right
+    redSquare.y = -600; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
     enemy.velocityX = -3;
     enemy.rotationalVelocity = 0;
-    redSquare.scaleX = 0.10;
-    redSquare.scaleY = 0.10;
+    redSquare.scaleX = 0.27;
+    redSquare.scaleY = 0.27;
 
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-10);
@@ -69,17 +69,17 @@ var runLevels = function (window) {
 
   function createEnemy2(x, y) {
     var enemy2 = game.createGameItem("enemy2", 25);
-    var redSquare = draw.bitmap("img/poisiontrap.png");
-    redSquare.x = -25; // where the enemy is left to right
-    redSquare.y = -25; // where the enemy is up and down 
-    enemy2.addChild(redSquare); //assigns enemy to child
+    var purpleSquare = draw.bitmap("img/reaper.png");
+    purpleSquare.x = -140; // where the enemy is left to right
+    purpleSquare.y = -180 // where the enemy is up and down 
+    enemy2.addChild(purpleSquare); //assigns enemy to child
     enemy2.x = x;
     enemy2.y = y;
-    game.addGameItem(enemy);
+    game.addGameItem(enemy2);
     enemy2.velocityX = -3;
     enemy2.rotationalVelocity = 0;
-    redSquare.scaleX = 0.25;
-    redSquare.scaleY = 0.25;
+    purpleSquare.scaleX = 0.25;
+    purpleSquare.scaleY = 0.25;
 
     enemy2.onPlayerCollision = function () {
       game.changeIntegrity(-10);
