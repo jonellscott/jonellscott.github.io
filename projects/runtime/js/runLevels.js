@@ -33,6 +33,22 @@ var runLevels = function (window) {
       obstacleImage.scaleX = 0.30 //how big the object is from its x value
       obstacleImage.scaleY = 0.30; //how big the object is from its y value
  
+    } 
+    
+    function createSawBlade2 (x, y) {
+      var hitZoneSize = 25; // where it hits
+      var damageFromObstacle = 10; //how much damage it takes
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //crtaes an obstacle and creates the hitzone
+      sawBladeHitZone.x = x; // where the obstacle is 
+      sawBladeHitZone.y = y; //how high the obstacle is from thee ground
+      game.addGameItem(sawBladeHitZone);
+      var obstacleImage2 = draw.bitmap("img/poisontrap.png");
+      sawBladeHitZone.addChild(obstacleImage2); //assigns enemy to child
+      obstacleImage2.x = -60; // where the obstacle is left to right
+      obstacleImage2.y = -50; // where the obstacle is up and down 
+      obstacleImage2.scaleX = 0.30 //how big the object is from its x value
+      obstacleImage2.scaleY = 0.30; //how big the object is from its y value
+ 
     }
 
     
@@ -175,6 +191,9 @@ var runLevels = function (window) {
         }
         if (element.type === "enemy2") {
           createEnemy2(element.x, element.y)
+        }
+        if (element.type === "sawblade2") {
+          createSawBlade2(element.x, element.y)
         }
       }
 
