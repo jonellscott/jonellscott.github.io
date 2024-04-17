@@ -22,7 +22,7 @@ var runLevels = function (window) {
     function createSawBlade (x, y) {
       var hitZoneSize = 25; // where it hits
       var damageFromObstacle = 10; //how much damage it takes
-      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //crtaes an obstacle and creates the hitzone
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //creates an obstacle and creates the hitzone
       sawBladeHitZone.x = x; // where the obstacle is 
       sawBladeHitZone.y = y; //how high the obstacle is from thee ground
       game.addGameItem(sawBladeHitZone);
@@ -38,7 +38,7 @@ var runLevels = function (window) {
     function createSawBlade2 (x, y) {
       var hitZoneSize = 25; // where it hits
       var damageFromObstacle = 10; //how much damage it takes
-      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //crtaes an obstacle and creates the hitzone
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); //creates an obstacle and creates the hitzone
       sawBladeHitZone.x = x; // where the obstacle is 
       sawBladeHitZone.y = y; //how high the obstacle is from thee ground
       game.addGameItem(sawBladeHitZone);
@@ -61,13 +61,13 @@ var runLevels = function (window) {
     redSquare.x = -180; // where the enemy is left to right
     redSquare.y = -600; // where the enemy is up and down 
     enemy.addChild(redSquare); //assigns enemy to child
-    enemy.x = x;
-    enemy.y = y;
+    enemy.x = x; // where the ememy is
+    enemy.y = y; //how high the enemy is from thee ground
     game.addGameItem(enemy);
-    enemy.velocityX = -3;
+    enemy.velocityX = -3; //how fast it moves
     enemy.rotationalVelocity = 0;
-    redSquare.scaleX = 0.27;
-    redSquare.scaleY = 0.27;
+    redSquare.scaleX = 0.27; //how big the enemy is from its x value
+    redSquare.scaleY = 0.27; //how big the enemy is from its y value
 
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-10);
@@ -89,13 +89,13 @@ var runLevels = function (window) {
     purpleSquare.x = -140; // where the enemy is left to right
     purpleSquare.y = -180 // where the enemy is up and down 
     enemy2.addChild(purpleSquare); //assigns enemy to child
-    enemy2.x = x;
-    enemy2.y = y;
+    enemy2.x = x; // where the ememy is
+    enemy2.y = y; //how high the enemy is from thee ground
     game.addGameItem(enemy2);
-    enemy2.velocityX = -3;
+    enemy2.velocityX = -3; //how fast it moves
     enemy2.rotationalVelocity = 0;
-    purpleSquare.scaleX = 0.25;
-    purpleSquare.scaleY = 0.25;
+    purpleSquare.scaleX = 0.25; //how big the enemy2 is from its x value
+    purpleSquare.scaleY = 0.25; //how big the enemy2 is from its y value
 
     enemy2.onPlayerCollision = function () {
       game.changeIntegrity(-10);
@@ -118,12 +118,12 @@ var runLevels = function (window) {
     blueSquare.x = -40; // where the reward is left to right
     blueSquare.y = -55; // where the reward is up and down 
     reward.addChild(blueSquare); //assigns reward to child
-    reward.x = x;
-    reward.y = y;
+    reward.x = x; // where the reward is
+    reward.y = y; //how high the enemy is from thee ground
     game.addGameItem(reward);
-    reward.velocityX = -3
-    blueSquare.scaleX = 0.30;
-    blueSquare.scaleY = 0.30;
+    reward.velocityX = -3 //how fast it moves
+    blueSquare.scaleX = 0.30; //how big the reward is from its x value
+    blueSquare.scaleY = 0.30; //how big the reward is from its y value
     
     
     
@@ -148,12 +148,12 @@ var runLevels = function (window) {
       greenSquare.x = -150; // where the marker is left to right
       greenSquare.y = -75; // where the marker is up and down 
       marker.addChild(greenSquare); //assigns marker to child
-      marker.x = x;
-      marker.y = y;
+      marker.x = x; // where the marker is
+      marker.y = y; //how high the marker is from thee ground
       game.addGameItem(marker);
-      marker.velocityX = -3
-      greenSquare.scaleX = 0.25;
-      greenSquare.scaleY = 0.25;
+      marker.velocityX = -3 //how fast it moves
+      greenSquare.scaleX = 0.25; //how big the marker is from its x value
+      greenSquare.scaleY = 0.25; //how big the marker is from its y value
   
       marker.onPlayerCollision = function () {
         game.changeIntegrity(25);
